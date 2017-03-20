@@ -1,0 +1,389 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>TEST Commonmark compositor</title><style>*{box-sizing:border-box}.cxs-display-table{display:table}.cxs-183745076 pre .hljs-title{color:#2196f3}.cxs-3954183383{font-size:24px}.cxs-3759173635{font-size:14px}.cxs-4066908388{clear:both}.cxs-799160745{font-size:48px}.cxs-3147789143{margin-left:-16px;margin-right:-16px}.cxs-1227374908{}.cxs-1227374908:hover{}.cxs-3102244317{}.cxs-3102244317 h1{font-weight:600;line-height:1.25;font-size:48px;margin-top:32px;margin-bottom:8px}.cxs-3102244317 h1 h0{}.cxs-3102244317 h1 h1{}.cxs-3102244317 h1 h2{}.cxs-3102244317 h1 h3{}.cxs-3102244317 h1 h4{}.cxs-3102244317 h1 h5{}.cxs-3102244317 h1 h6{}.cxs-3102244317 h2{font-weight:600;line-height:1.25;font-size:24px;margin-top:32px;margin-bottom:8px}.cxs-3102244317 h2 h0{}.cxs-3102244317 h2 h1{}.cxs-3102244317 h2 h2{}.cxs-3102244317 h2 h3{}.cxs-3102244317 h2 h4{}.cxs-3102244317 h2 h5{}.cxs-3102244317 h2 h6{}.cxs-3102244317 h3{font-weight:600;line-height:1.25;font-size:20px;margin-top:32px;margin-bottom:8px}.cxs-3102244317 h3 h0{}.cxs-3102244317 h3 h1{}.cxs-3102244317 h3 h2{}.cxs-3102244317 h3 h3{}.cxs-3102244317 h3 h4{}.cxs-3102244317 h3 h5{}.cxs-3102244317 h3 h6{}.cxs-3102244317 h4{font-weight:600;line-height:1.25;font-size:16px;margin-top:32px;margin-bottom:8px}.cxs-3102244317 h4 h0{}.cxs-3102244317 h4 h1{}.cxs-3102244317 h4 h2{}.cxs-3102244317 h4 h3{}.cxs-3102244317 h4 h4{}.cxs-3102244317 h4 h5{}.cxs-3102244317 h4 h6{}.cxs-3102244317 h5{font-weight:600;line-height:1.25;font-size:14px;margin-top:32px;margin-bottom:8px}.cxs-3102244317 h5 h0{}.cxs-3102244317 h5 h1{}.cxs-3102244317 h5 h2{}.cxs-3102244317 h5 h3{}.cxs-3102244317 h5 h4{}.cxs-3102244317 h5 h5{}.cxs-3102244317 h5 h6{}.cxs-3102244317 h6{font-weight:600;line-height:1.25;font-size:12px;margin-top:32px;margin-bottom:8px}.cxs-3102244317 h6 h0{}.cxs-3102244317 h6 h1{}.cxs-3102244317 h6 h2{}.cxs-3102244317 h6 h3{}.cxs-3102244317 h6 h4{}.cxs-3102244317 h6 h5{}.cxs-3102244317 h6 h6{}.cxs-3102244317 p{overflow-x:auto;margin-top:0px;margin-bottom:16px}.cxs-3102244317 code{font-family:Menlo, monospace;font-size:14px;padding:4px;background-color:#eee;border-radius:2px}.cxs-3102244317 pre{font-family:Menlo, monospace;font-size:14px;overflow-x:auto;padding:16px;margin-top:8px;margin-bottom:32px;background-color:#eee;border-radius:2px}.cxs-3102244317 pre .hljs-keyword{color:#08e}.cxs-3102244317 pre .hljs-built_in{color:#0e8}.cxs-3102244317 pre .hljs-type{color:#0e8}.cxs-3102244317 pre .hljs-literal{color:#08e}.cxs-3102244317 pre .hljs-number{color:#e08}.cxs-3102244317 pre .hljs-regexp{color:#08e}.cxs-3102244317 pre .hljs-string{color:#0e8}.cxs-3102244317 pre .hljs-subst{color:#0e8}.cxs-3102244317 pre .hljs-symbol{color:#08e}.cxs-3102244317 pre .hljs-class{color:#08e}.cxs-3102244317 pre .hljs-function{color:#e08}.cxs-3102244317 pre .hljs-title{color:#08e}.cxs-3102244317 pre .hljs-params{color:#0e8}.cxs-3102244317 pre .hljs-comment{color:#0e8}.cxs-3102244317 pre .hljs-doctag{color:#0e8}.cxs-3102244317 pre .hljs-meta{color:#0e8}.cxs-3102244317 pre .hljs-meta-keyword{color:#08e}.cxs-3102244317 pre .hljs-meta-string{color:#08e}.cxs-3102244317 hr{margin-top:48px;margin-bottom:48px;border:0px;border-bottom-style:solid;border-bottom-width:1px;border-bottom:2px solid #ddd}.cxs-3102244317 table{border-collapse:separate;border-spacing:0px;max-width:100%;width:100%}.cxs-3102244317 th{text-align:left;line-height:inherit;vertical-align:bottom}.cxs-3102244317 td{vertical-align:top;line-height:inherit}.cxs-3102244317 img{max-width: 100%;height: auto;margin-top:16px;margin-bottom:16px}.cxs-3102244317 a{color:#08e;text-decoration: none}.cxs-3102244317 a:hover{text-decoration:underline}.cxs-3102244317 ul{padding-left:32px;margin-top:0px;margin-bottom:16px}.cxs-2262331773{font-size:20px}.cxs-3075267555 ul{padding-left:32px;margin-top:0px;margin-bottom:16px}.cxs-424651569{font-size:20px}.cxs-3075267555 a:hover{color:#0099e0}.cxs-1246195080{margin-left:-8px;margin-right:-8px}.cxs-3057891252{font-size:14px}.cxs-3057891252 h1{font-size:inherit;margin-top:32px}.cxs-3057891252 h1:before{content:"# ";color:#888}.cxs-3057891252 h2{font-size:inherit;margin-top:32px}.cxs-3057891252 h2:before{content:"## ";color:#888}.cxs-3057891252 h3{font-size:inherit}.cxs-3057891252 h3:before{content:"### ";color:#888}.cxs-3057891252 h4{font-size:16px}.cxs-3057891252 h5{font-size:14px}.cxs-3057891252 h6{font-size:12px}.cxs-3057891252 p{overflow-x:auto}.cxs-3057891252 code{font-family:inherit;font-size:inherit;overflow-x:auto;color:#666}.cxs-3057891252 code:before{content:"`"}.cxs-3057891252 code:after{content:"`"}.cxs-3057891252 pre{font-family:inherit;font-size:inherit;overflow-x:auto;color:#666}.cxs-3057891252 pre:before{content:"```";display:block}.cxs-3057891252 pre:after{content:"```";display:block}.cxs-3057891252 pre .hljs-keyword{color:#666}.cxs-3057891252 pre .hljs-built_in{color:#888}.cxs-3057891252 pre .hljs-type{color:#888}.cxs-3057891252 pre .hljs-literal{color:#666}.cxs-3057891252 pre .hljs-number{color:#1f80ff}.cxs-3057891252 pre .hljs-regexp{color:#666}.cxs-3057891252 pre .hljs-string{color:#888}.cxs-3057891252 pre .hljs-subst{color:#888}.cxs-3057891252 pre .hljs-symbol{color:#666}.cxs-3057891252 pre .hljs-class{color:#666}.cxs-3057891252 pre .hljs-function{color:#1f80ff}.cxs-3057891252 pre .hljs-title{color:#666}.cxs-3057891252 pre .hljs-params{color:#888}.cxs-3057891252 pre .hljs-comment{color:#888}.cxs-3057891252 pre .hljs-doctag{color:#888}.cxs-3057891252 pre .hljs-meta{color:#888}.cxs-3057891252 pre .hljs-meta-keyword{color:#666}.cxs-3057891252 pre .hljs-meta-string{color:#666}.cxs-3057891252 hr{margin-top:48px;margin-bottom:48px;border:0px;border-bottom-style:solid;border-bottom-width:1px}.cxs-3057891252 table{border-collapse:separate;border-spacing:0px;max-width:100%;width:100%}.cxs-3057891252 th{text-align:left;line-height:inherit;vertical-align:bottom}.cxs-3057891252 td{vertical-align:top;line-height:inherit}.cxs-3057891252 img{max-width: 100%;height: auto;margin-top:16px;margin-bottom:16px}.cxs-3057891252 a{color:inherit}.cxs-3057891252 ul{list-style-type:none;padding-left:0px}.cxs-3057891252 li{}.cxs-3057891252 li:before{content:"- "}.cxs-3057891252 b{}.cxs-3057891252 b:before{content:"*"}.cxs-3057891252 b:after{content:"*"}.cxs-3057891252 pre code{}.cxs-3057891252 pre code:before{content:none}.cxs-3057891252 pre code:after{content:none}.cxs-183745076{}.cxs-183745076 h1{font-weight:500;letter-spacing:-0.01em;font-size:48px;margin-top:32px;margin-bottom:8px}.cxs-183745076 h2{font-weight:500;letter-spacing:-0.01em;font-size:24px;margin-top:32px;margin-bottom:8px}.cxs-183745076 h3{font-weight:500;letter-spacing:-0.01em;font-size:20px;margin-top:32px;margin-bottom:8px}.cxs-183745076 h4{font-weight:500;letter-spacing:-0.01em;font-size:16px;margin-top:32px;margin-bottom:8px}.cxs-183745076 h5{font-weight:500;letter-spacing:-0.01em;font-size:14px;margin-top:32px;margin-bottom:8px}.cxs-183745076 h6{font-weight:500;letter-spacing:-0.01em;font-size:12px;margin-top:32px;margin-bottom:8px}.cxs-183745076 p{overflow-x:auto;margin-top:0px;margin-bottom:16px}.cxs-183745076 code{font-family:Menlo, monospace;font-size:14px;padding:4px;background-color:#f5f5f5;border-radius:2px}.cxs-183745076 pre{font-family:Menlo, monospace;font-size:14px;overflow-x:auto;padding:16px;margin-top:8px;margin-bottom:32px;background-color:#f5f5f5;border-radius:2px}.cxs-183745076 pre .hljs-keyword{color:#2196f3}.cxs-183745076 pre .hljs-built_in{color:#1565c0}.cxs-183745076 pre .hljs-type{color:#1565c0}.cxs-183745076 pre .hljs-literal{color:#2196f3}.cxs-183745076 pre .hljs-number{color:#ff4081}.cxs-183745076 pre .hljs-regexp{color:#2196f3}.cxs-183745076 pre .hljs-string{color:#1565c0}.cxs-183745076 pre .hljs-subst{color:#1565c0}.cxs-183745076 pre .hljs-symbol{color:#2196f3}.cxs-183745076 pre .hljs-class{color:#2196f3}.cxs-183745076 pre .hljs-function{color:#ff4081}.cxs-3075267555 a{color:inherit}.cxs-183745076 pre .hljs-params{color:#1565c0}.cxs-183745076 pre .hljs-comment{color:#1565c0}.cxs-183745076 pre .hljs-doctag{color:#1565c0}.cxs-183745076 pre .hljs-meta{color:#1565c0}.cxs-183745076 pre .hljs-meta-keyword{color:#2196f3}.cxs-183745076 pre .hljs-meta-string{color:#2196f3}.cxs-183745076 hr{margin-top:48px;margin-bottom:48px;border:0px;border-bottom-style:solid;border-bottom-width:1px;border-bottom:2px solid #e0e0e0}.cxs-183745076 table{border-collapse:separate;border-spacing:0px;max-width:100%;width:100%}.cxs-183745076 th{text-align:left;line-height:inherit;vertical-align:bottom}.cxs-183745076 td{vertical-align:top;line-height:inherit}.cxs-183745076 img{max-width: 100%;height: auto;margin-top:16px;margin-bottom:16px}.cxs-183745076 a{color:#2196f3;text-decoration: none}.cxs-183745076 a:hover{text-decoration:underline}.cxs-183745076 ul{padding-left:32px;margin-top:0px;margin-bottom:16px}.cxs-857983649{}.cxs-857983649 h1{font-weight:700;letter-spacing:-0.01em;font-size:24px;margin-top:48px;margin-bottom:48px;border-bottom-width:4px;border-bottom-style:solid}.cxs-3075267555 img{max-width: 100%;height: auto;margin-top:16px;margin-bottom:16px}.cxs-857983649 h2{font-weight:700;letter-spacing:-0.01em;font-size:24px;margin-top:48px;margin-bottom:48px;border-bottom-width:4px;border-bottom-style:solid}.cxs-3075267555 td{vertical-align:top;line-height:inherit}.cxs-857983649 h3{font-weight:700;letter-spacing:-0.01em;font-size:20px;margin-top:48px;margin-bottom:48px;border-bottom-width:2px;border-bottom-style:solid}.cxs-3075267555 th{text-align:left;line-height:inherit;vertical-align:bottom}.cxs-857983649 h4{font-weight:700;letter-spacing:-0.01em;font-size:20px;margin-top:32px;margin-bottom:8px}.cxs-857983649 h5{font-weight:700;letter-spacing:-0.01em;font-size:20px;margin-top:32px;margin-bottom:8px}.cxs-857983649 h6{font-weight:700;letter-spacing:-0.01em;font-size:20px;margin-top:32px;margin-bottom:8px}.cxs-857983649 p{overflow-x:auto;max-width:40em;margin-top:0px;margin-bottom:16px}.cxs-857983649 code{font-family:Menlo, monospace;font-size:14px;color:#05a}.cxs-857983649 pre{font-family:Menlo, monospace;font-size:14px;overflow-x:auto;padding-top:16px;padding-bottom:16px;margin-top:32px;margin-bottom:32px;border-top:1px solid;border-bottom:1px solid}.cxs-857983649 pre .hljs-keyword{color:#05a}.cxs-857983649 pre .hljs-built_in{color:#444}.cxs-857983649 pre .hljs-type{color:#444}.cxs-857983649 pre .hljs-literal{color:#05a}.cxs-857983649 pre .hljs-number{color:#f30}.cxs-857983649 pre .hljs-regexp{color:#05a}.cxs-857983649 pre .hljs-string{color:#444}.cxs-857983649 pre .hljs-subst{color:#444}.cxs-857983649 pre .hljs-symbol{color:#05a}.cxs-857983649 pre .hljs-class{color:#05a}.cxs-857983649 pre .hljs-function{color:#f30}.cxs-857983649 pre .hljs-title{color:#05a}.cxs-857983649 pre .hljs-params{color:#444}.cxs-857983649 pre .hljs-comment{color:#444}.cxs-857983649 pre .hljs-doctag{color:#444}.cxs-857983649 pre .hljs-meta{color:#444}.cxs-857983649 pre .hljs-meta-keyword{color:#05a}.cxs-857983649 pre .hljs-meta-string{color:#05a}.cxs-857983649 hr{margin-top:48px;margin-bottom:48px;border:0px;border-bottom:2px solid}.cxs-857983649 table{border-collapse:separate;border-spacing:0px;max-width:100%;width:100%}.cxs-857983649 th{text-align:left;line-height:inherit;vertical-align:bottom}.cxs-857983649 td{vertical-align:top;line-height:inherit}.cxs-857983649 img{max-width: 100%;height: auto;margin-top:16px;margin-bottom:16px}.cxs-857983649 a{color:#05a}.cxs-857983649 a:hover{text-decoration:underline}.cxs-857983649 ul{list-style:square inside;padding-left:0px;margin-top:0px;margin-bottom:32px}.cxs-291348840{font-size:20px;line-height:1.625}.cxs-291348840 h1{font-weight:400;text-transform:uppercase;letter-spacing:0.1em;font-size:48px;margin-top:48px;margin-bottom:8px}.cxs-291348840 h2{font-weight:400;text-transform:uppercase;letter-spacing:0.1em;font-size:24px;margin-top:48px;margin-bottom:8px}.cxs-291348840 h3{font-weight:400;text-transform:uppercase;letter-spacing:0.1em;font-size:20px;margin-top:48px;margin-bottom:8px}.cxs-291348840 h4{font-weight:400;text-transform:uppercase;letter-spacing:0.1em;font-size:16px;margin-top:32px;margin-bottom:8px}.cxs-291348840 h5{font-weight:400;text-transform:uppercase;letter-spacing:0.1em;font-size:14px;margin-top:32px;margin-bottom:8px}.cxs-291348840 h6{font-weight:400;text-transform:uppercase;letter-spacing:0.1em;font-size:12px;margin-top:32px;margin-bottom:8px}.cxs-291348840 p{overflow-x:auto;font-size:20px;margin-top:0px;margin-bottom:16px}.cxs-291348840 code{font-family:Menlo, monospace;font-size:14px;color:#005499}.cxs-291348840 pre{font-family:Menlo, monospace;font-size:14px;overflow-x:auto;padding-left:16px;margin-top:8px;margin-bottom:32px;border-left:2px solid #ddd}.cxs-291348840 pre .hljs-keyword{color:#ee5544}.cxs-291348840 pre .hljs-built_in{color:#005499}.cxs-291348840 pre .hljs-type{color:#005499}.cxs-291348840 pre .hljs-literal{color:#ee5544}.cxs-291348840 pre .hljs-number{color:#00bd78}.cxs-291348840 pre .hljs-regexp{color:#ee5544}.cxs-291348840 pre .hljs-string{color:#005499}.cxs-291348840 pre .hljs-subst{color:#005499}.cxs-291348840 pre .hljs-symbol{color:#ee5544}.cxs-291348840 pre .hljs-class{color:#ee5544}.cxs-291348840 pre .hljs-function{color:#00bd78}.cxs-291348840 pre .hljs-title{color:#ee5544}.cxs-291348840 pre .hljs-params{color:#005499}.cxs-291348840 pre .hljs-comment{color:#005499}.cxs-291348840 pre .hljs-doctag{color:#005499}.cxs-291348840 pre .hljs-meta{color:#005499}.cxs-291348840 pre .hljs-meta-keyword{color:#ee5544}.cxs-291348840 pre .hljs-meta-string{color:#ee5544}.cxs-291348840 hr{margin-top:48px;margin-bottom:48px;border:0px;border-bottom:2px solid #ddd}.cxs-291348840 table{border-collapse:separate;border-spacing:0px;max-width:100%;width:100%}.cxs-291348840 th{text-align:left;line-height:inherit;vertical-align:bottom}.cxs-291348840 td{vertical-align:top;line-height:inherit}.cxs-291348840 img{max-width: 100%;height: auto;margin-top:16px;margin-bottom:16px}.cxs-291348840 a{color:inherit}.cxs-291348840 a:hover{color:#ee5544}.cxs-291348840 ul{padding-left:32px;margin-top:0px;margin-bottom:16px}.cxs-2947628758{}.cxs-2947628758 h1{font-weight:600;line-height:1.25;font-size:48px;margin-top:32px;margin-bottom:8px}.cxs-2947628758 h2{font-weight:600;line-height:1.25;font-size:24px;margin-top:32px;margin-bottom:8px}.cxs-2947628758 h3{font-weight:600;line-height:1.25;font-size:20px;margin-top:32px;margin-bottom:8px}.cxs-2947628758 h4{font-weight:600;line-height:1.25;font-size:16px;margin-top:32px;margin-bottom:8px}.cxs-2947628758 h5{font-weight:600;line-height:1.25;font-size:14px;margin-top:32px;margin-bottom:8px}.cxs-2947628758 h6{font-weight:600;line-height:1.25;font-size:12px;margin-top:32px;margin-bottom:8px}.cxs-2947628758 p{overflow-x:auto;margin-top:0px;margin-bottom:16px}.cxs-2947628758 code{font-family:Menlo, monospace;font-size:14px;padding:4px;background-color:#eee;border-radius:2px}.cxs-2947628758 pre{font-family:Menlo, monospace;font-size:14px;overflow-x:auto;padding:16px;margin-top:8px;margin-bottom:32px;background-color:#eee;border-radius:2px}.cxs-2947628758 pre .hljs-keyword{color:#08e}.cxs-2947628758 pre .hljs-built_in{color:#059}.cxs-2947628758 pre .hljs-type{color:#059}.cxs-2947628758 pre .hljs-literal{color:#08e}.cxs-2947628758 pre .hljs-number{color:#e08}.cxs-2947628758 pre .hljs-regexp{color:#08e}.cxs-2947628758 pre .hljs-string{color:#059}.cxs-2947628758 pre .hljs-subst{color:#059}.cxs-2947628758 pre .hljs-symbol{color:#08e}.cxs-2947628758 pre .hljs-class{color:#08e}.cxs-2947628758 pre .hljs-function{color:#e08}.cxs-2947628758 pre .hljs-title{color:#08e}.cxs-2947628758 pre .hljs-params{color:#059}.cxs-2947628758 pre .hljs-comment{color:#059}.cxs-2947628758 pre .hljs-doctag{color:#059}.cxs-2947628758 pre .hljs-meta{color:#059}.cxs-2947628758 pre .hljs-meta-keyword{color:#08e}.cxs-2947628758 pre .hljs-meta-string{color:#08e}.cxs-2947628758 hr{margin-top:48px;margin-bottom:48px;border:0px;border-bottom-style:solid;border-bottom-width:1px;border-bottom:2px solid #ddd}.cxs-2947628758 table{border-collapse:separate;border-spacing:0px;max-width:100%;width:100%}.cxs-2947628758 th{text-align:left;line-height:inherit;vertical-align:bottom}.cxs-2947628758 td{vertical-align:top;line-height:inherit}.cxs-2947628758 img{max-width: 100%;height: auto;margin-top:16px;margin-bottom:16px}.cxs-2947628758 a{color:#08e;text-decoration: none}.cxs-2947628758 a:hover{text-decoration:underline}.cxs-2947628758 ul{padding-left:32px;margin-top:0px;margin-bottom:16px}.cxs-3075267555{font-size:20px;line-height:1.625}.cxs-3075267555 h1{font-weight:600;letter-spacing:0.1em;font-size:48px;margin-top:48px;margin-bottom:8px}.cxs-3075267555 h2{font-weight:600;letter-spacing:0.1em;font-size:24px;margin-top:48px;margin-bottom:8px}.cxs-3075267555 h3{font-weight:600;letter-spacing:0.1em;font-size:20px;margin-top:48px;margin-bottom:8px}.cxs-3075267555 h4{font-weight:600;letter-spacing:0.1em;font-size:16px;margin-top:32px;margin-bottom:8px}.cxs-3075267555 h5{font-weight:600;letter-spacing:0.1em;font-size:14px;margin-top:32px;margin-bottom:8px}.cxs-3075267555 h6{font-weight:600;letter-spacing:0.1em;font-size:12px;margin-top:32px;margin-bottom:8px}.cxs-3075267555 p{overflow-x:auto;font-size:20px;margin-top:0px;margin-bottom:16px}.cxs-3075267555 code{font-family:Menlo, monospace;font-size:14px;color:#ab61ff}.cxs-3075267555 pre{font-family:Menlo, monospace;font-size:14px;overflow-x:auto;padding-left:16px;margin-top:8px;margin-bottom:32px;border-left:2px solid #ccd}.cxs-3075267555 pre .hljs-keyword{color:#0099e0}.cxs-3075267555 pre .hljs-built_in{color:#ab61ff}.cxs-3075267555 pre .hljs-type{color:#ab61ff}.cxs-3075267555 pre .hljs-literal{color:#0099e0}.cxs-3075267555 pre .hljs-number{color:#f7b}.cxs-3075267555 pre .hljs-regexp{color:#0099e0}.cxs-3075267555 pre .hljs-string{color:#ab61ff}.cxs-3075267555 pre .hljs-subst{color:#ab61ff}.cxs-3075267555 pre .hljs-symbol{color:#0099e0}.cxs-3075267555 pre .hljs-class{color:#0099e0}.cxs-3075267555 pre .hljs-function{color:#f7b}.cxs-3075267555 pre .hljs-title{color:#0099e0}.cxs-3075267555 pre .hljs-params{color:#ab61ff}.cxs-3075267555 pre .hljs-comment{color:#ab61ff}.cxs-3075267555 pre .hljs-doctag{color:#ab61ff}.cxs-3075267555 pre .hljs-meta{color:#ab61ff}.cxs-3075267555 pre .hljs-meta-keyword{color:#0099e0}.cxs-3075267555 pre .hljs-meta-string{color:#0099e0}.cxs-3075267555 hr{margin-top:48px;margin-bottom:48px;border:0px;border-bottom:2px solid #ccd}.cxs-3075267555 table{border-collapse:separate;border-spacing:0px;max-width:100%;width:100%}@media screen and (min-width:52em) { .cxs-857983649 h3{font-size:24px} }@media screen and (min-width:52em) { .cxs-857983649 h2{font-size:48px} }@media screen and (min-width:52em) { .cxs-857983649 h1{font-size:48px} }@media screen and (min-width: 52em) { .cxs-799160745{font-size:72px} }@media screen and (min-width: 52em) { .cxs-424651569{} }@media screen and (min-width: 52em) { .cxs-2262331773{font-size:32px} }@media screen and (min-width: 52em) { .cxs-3954183383{} }@media screen and (min-width: 52em) { .cxs-3759173635{} }</style></head><body style="margin:0;"><div class="Xv" style="font-family:Athelas, Georgia, serif;font-weight:400;line-height:1.5;color:#121212;background-color:#fff;"><nav style="display:flex;align-items:center;padding-top:8px;padding-bottom:8px;padding-left:16px;padding-right:16px;background-color:#fff;"><a href="https://github.com/chrisui/commonmark.js" class="Link" style="box-sizing:border-box;color:inherit;display:inline-block;font-size:14px;line-height:16px;padding-left:16px;padding-right:16px;padding-top:16px;padding-bottom:16px;font-weight:600;text-decoration:none;">GitHub</a><a href="https://npmjs.com/package/lystable-commonmark" class="Link" style="box-sizing:border-box;color:inherit;display:inline-block;font-size:14px;line-height:16px;padding-left:16px;padding-right:16px;padding-top:16px;padding-bottom:16px;font-weight:600;text-decoration:none;">npm</a></nav><header class="BannerHeader" style="display:flex;align-items:center;justify-content:center;text-align:left;min-height:100vh;color:#121212;background-color:#f3f3f3;background-image:url(undefined);background-size:cover;background-position:center;"><div style="box-sizing:border-box;width:100%;max-width:768px;margin-left:auto;margin-right:auto;padding-top:48px;padding-bottom:48px;padding-left:32px;padding-right:32px;"><h1 class="cxs-799160745" style="box-sizing:border-box;font-weight:400;text-transform:uppercase;letter-spacing:0.1em;margin:0;">commonmark.js</h1><h2 class="cxs-3954183383" style="box-sizing:border-box;font-weight:400;text-transform:uppercase;letter-spacing:0.1em;margin:0;">CommonMark parser and renderer in JavaScript</h2><p class="Text" style="box-sizing:border-box;font-size:20px;margin:0;">v0.23.0</p><div class="cxs-1246195080" style="box-sizing:border-box;padding-top:16px;padding-bottom:16px;"><iframe src="https://platform.twitter.com/widgets/tweet_button.html?text=commonmark.js%3A%20CommonMark%20parser%20and%20renderer%20in%20JavaScript&amp;url=&amp;via=&amp;hashtags=&amp;size=" height="20" allowtransparency="true" frameborder="0" scrolling="no" style="box-sizing:border-box;width:61px;overflow:hidden;margin:8px;"></iframe><iframe src="https://ghbtns.com/github-btn.html?type=star&amp;count=true&amp;user=chrisui&amp;repo=commonmark.js&amp;size=" height="20" frameborder="0" scrolling="no" style="box-sizing:border-box;width:100px;overflow:hidden;margin:8px;"></iframe><div class="cxs-4066908388 cxs-display-table"></div></div></div></header><div class="cxs-291348840" style="box-sizing:border-box;max-width:768px;margin-left:auto;margin-right:auto;padding-top:32px;padding-bottom:32px;padding-left:32px;padding-right:32px;"><article style="box-sizing:border-box;"><div>
+<p><a href="https://travis-ci.org/jgm/commonmark.js"><img src="https://img.shields.io/travis/jgm/commonmark.js/master.svg?style=flat" /></a>
+<a href="https://www.npmjs.org/package/commonmark"><img src="https://img.shields.io/npm/v/commonmark.svg?style=flat" /></a></p>
+<p>CommonMark is a rationalized version of Markdown syntax,
+with a <a href="http://spec.commonmark.org">spec</a> and BSD-licensed reference
+implementations in C and JavaScript.</p>
+<p>For more information, see <a href="http://commonmark.org">http://commonmark.org</a>.</p>
+<p>This repository contains the JavaScript reference implementation.
+It provides a library with functions for parsing CommonMark
+documents to an abstract syntax tree (AST), manipulating the AST,
+and rendering the document to HTML or to an XML representation of the
+AST.</p>
+<p>To play with this library without installing it, see
+the live dingus at <a href="http://try.commonmark.org/">http://try.commonmark.org/</a>.</p>
+<h2>Installing</h2>
+<p>You can install the library using <code>npm</code>:</p>
+<pre>npm <span class="hljs-keyword">install</span> commonmark</pre><p>This package includes the commonmark library and a
+command-line executable, <code>commonmark</code>.</p>
+<p>For client-side use, you can do <code>make dist</code> to produce
+a standalone JavaScript file <code>js/dist/commonmark.js</code>,
+suitable for linking into a web page, or fetch the latest
+from <a href="http://spec.commonmark.org/js/commonmark.js">http://spec.commonmark.org/js/commonmark.js</a>, or
+<code>bower install commonmark</code>.</p>
+<p>To run tests for the JavaScript library:</p>
+<pre>npm <span class="hljs-keyword">install</span> # <span class="hljs-keyword">if</span> needed <span class="hljs-keyword">to</span> <span class="hljs-keyword">fetch</span> dependencies
+make <span class="hljs-keyword">test</span></pre><p>To run benchmarks against some other JavaScript converters:</p>
+<pre><span class="hljs-symbol">npm</span> install <span class="hljs-keyword">benchmark </span>showdown <span class="hljs-keyword">marked </span><span class="hljs-keyword">markdown-it
+</span><span class="hljs-symbol">make</span> <span class="hljs-keyword">bench</span></pre><p>To start an interactive dingus that you can use to try out
+the library:</p>
+<pre><span class="hljs-attribute">make dingus</span></pre><h2>Usage</h2>
+<p>Instead of converting Markdown directly to HTML, as most converters
+do, <code>commonmark.js</code> parses Markdown to an AST (abstract syntax tree),
+and then renders this AST as HTML.  This opens up the possibility of
+manipulating the AST between parsing and rendering.  For example, one
+could transform emphasis into ALL CAPS.</p>
+<p>Here's a basic usage example:</p>
+<pre><span class="hljs-keyword">var</span> reader = <span class="hljs-keyword">new</span> commonmark.Parser();
+<span class="hljs-keyword">var</span> writer = <span class="hljs-keyword">new</span> commonmark.HtmlRenderer();
+<span class="hljs-keyword">var</span> parsed = reader.parse(<span class="hljs-string">&quot;Hello *world*&quot;</span>); <span class="hljs-comment">// parsed is a 'Node' tree</span>
+<span class="hljs-comment">// transform parsed if you like...</span>
+<span class="hljs-keyword">var</span> result = writer.render(parsed); <span class="hljs-comment">// result is a String</span></pre><p>The constructors for <code>Parser</code> and <code>HtmlRenderer</code> take an optional
+<code>options</code> parameter:</p>
+<pre><span class="hljs-keyword">var</span> writer = <span class="hljs-keyword">new</span> commonmark.HtmlRenderer({<span class="hljs-attr">sourcepos</span>: <span class="hljs-literal">true</span>});</pre><p>The following options are currently supported:</p>
+<ul>
+<li><code>sourcepos</code>:  if <code>true</code>, source position information for block-level
+elements will be rendered in the <code>data-sourcepos</code> attribute (for
+HTML) or the <code>sourcepos</code> attribute (for XML).</li>
+<li><code>smart</code>:  if <code>true</code>, straight quotes will be made curly, <code>--</code> will
+be changed to an en dash, <code>---</code> will be changed to an em dash, and
+<code>...</code> will be changed to ellipses.</li>
+<li><code>safe</code>: if <code>true</code>, raw HTML will not be passed through to HTML
+output (it will be replaced by comments), and potentially unsafe
+URLs in links and images (those beginning with <code>javascript:</code>,
+<code>vbscript:</code>, <code>file:</code>, and with a few exceptions <code>data:</code>) will
+be replaced with empty strings.</li>
+</ul>
+<p>It is also possible to override the <code>escape</code> and <code>softbreak</code>
+properties of a renderer.  So, to make soft breaks render as hard
+breaks in HTML:</p>
+<pre><span class="hljs-keyword">var</span> writer = <span class="hljs-keyword">new</span> commonmark.HtmlRenderer;
+writer.softbreak = <span class="hljs-string">&quot;&lt;br /&gt;&quot;</span>;</pre><p>To make them render as spaces:</p>
+<pre>writer.softbreak = <span class="hljs-string">&quot; &quot;</span>;</pre><p>To override <code>escape</code>, pass it a function with two parameters:
+the first is the string to be escaped, the second is a boolean
+that is <code>true</code> if the escaped string is to be included in an
+attribute.</p>
+<p>In addition to the <code>HtmlRenderer</code>, there is an <code>XmlRenderer</code>, which
+will produce an XML representation of the AST:</p>
+<pre><span class="hljs-keyword">var</span> writer = <span class="hljs-keyword">new</span> commonmark.XmlRenderer({<span class="hljs-attr">sourcepos</span>: <span class="hljs-literal">true</span>});</pre><p>The parser returns a Node.  The following public properties are defined
+(those marked &quot;read-only&quot; have only a getter, not a setter):</p>
+<ul>
+<li><code>type</code> (read-only):  a String, one of
+<code>Text</code>, <code>Softbreak</code>, <code>Hardbreak</code>, <code>Emph</code>, <code>Strong</code>,
+<code>Html</code>, <code>Link</code>, <code>Image</code>, <code>Code</code>, <code>Document</code>, <code>Paragraph</code>,
+<code>BlockQuote</code>, <code>Item</code>, <code>List</code>, <code>Header</code>, <code>CodeBlock</code>,
+<code>HtmlBlock</code> <code>HorizontalRule</code>.</li>
+<li><code>firstChild</code> (read-only):  a Node or null.</li>
+<li><code>lastChild</code> (read-only): a Node or null.</li>
+<li><code>next</code> (read-only): a Node or null.</li>
+<li><code>prev</code> (read-only): a Node or null.</li>
+<li><code>parent</code> (read-only): a Node or null.</li>
+<li><code>sourcepos</code> (read-only): an Array with the following form:
+<code>[[startline, startcolumn], [endline, endcolumn]]</code>.</li>
+<li><code>isContainer</code> (read-only): <code>true</code> if the Node can contain other
+ Nodes as children.</li>
+<li><code>literal</code>: the literal String content of the node or null.</li>
+<li><code>destination</code>: link or image destination (String) or null.</li>
+<li><code>title</code>: link or image title (String) or null.</li>
+<li><code>info</code>: fenced code block info string (String) or null.</li>
+<li><code>level</code>: header level (Number).</li>
+<li><code>listType</code>: a String, either <code>Bullet</code> or <code>Ordered</code>.</li>
+<li><code>listTight</code>: <code>true</code> if list is tight.</li>
+<li><code>listStart</code>: a Number, the starting number of an ordered list.</li>
+<li><code>listDelimiter</code>: a String, either <code>)</code> or <code>.</code> for an ordered list.</li>
+</ul>
+<p>Nodes have the following public methods:</p>
+<ul>
+<li><code>appendChild(child)</code>:  Append a Node <code>child</code> to the end of the
+Node's children.</li>
+<li><code>prependChild(child)</code>:  Prepend a Node <code>child</code> to the end of the
+Node's children.</li>
+<li><code>unlink()</code>:  Remove the Node from the tree, severing its links
+with siblings and parents, and closing up gaps as needed.</li>
+<li><code>insertAfter(sibling)</code>: Insert a Node <code>sibling</code> after the Node.</li>
+<li><code>insertBefore(sibling)</code>: Insert a Node <code>sibling</code> before the Node.</li>
+<li><code>walker()</code>: Returns a NodeWalker that can be used to iterate through
+the Node tree rooted in the Node.</li>
+</ul>
+<p>The NodeWalker returned by <code>walker()</code> has two methods:</p>
+<ul>
+<li><code>next()</code>: Returns an object with properties <code>entering</code> (a boolean,
+which is <code>true</code> when we enter a Node from a parent or sibling, and
+<code>false</code> when we reenter it from a child).  Returns <code>null</code> when
+we have finished walking the tree.</li>
+<li><code>resumeAt(node, entering)</code>: Resets the iterator to resume at the
+specified node and setting for <code>entering</code>.  (Normally this isn't
+needed unless you do destructive updates to the Node tree.)</li>
+</ul>
+<p>Here is an example of the use of a NodeWalker to iterate through
+the tree, making transformations.  This simple example converts
+the contents of all <code>Text</code> nodes to ALL CAPS:</p>
+<pre><span class="hljs-keyword">var</span> walker = parsed.walker();
+<span class="hljs-keyword">var</span> event, node;
+
+<span class="hljs-keyword">while</span> ((event = walker.next())) {
+  node = event.node;
+  <span class="hljs-keyword">if</span> (event.entering &amp;&amp; node.type === <span class="hljs-string">'Text'</span>) {
+    node.literal = node.literal.toUpperCase();
+  }
+}</pre><p>This more complex example converts emphasis to ALL CAPS:</p>
+<pre><span class="hljs-keyword">var</span> walker = parsed.walker();
+<span class="hljs-keyword">var</span> event, node;
+<span class="hljs-keyword">var</span> inEmph = <span class="hljs-literal">false</span>;
+
+<span class="hljs-keyword">while</span> ((event = walker.next())) {
+  node = event.node;
+  <span class="hljs-keyword">if</span> (node.type === <span class="hljs-string">'Emph'</span>) {
+    <span class="hljs-keyword">if</span> (event.entering) {
+      inEmph = <span class="hljs-literal">true</span>;
+    } <span class="hljs-keyword">else</span> {
+      inEmph = <span class="hljs-literal">false</span>;
+      <span class="hljs-comment">// add Emph node's children as siblings</span>
+      <span class="hljs-keyword">while</span> (node.firstChild) {
+        node.insertBefore(node.firstChild);
+      }
+      <span class="hljs-comment">// remove the empty Emph node</span>
+      node.unlink()
+    }
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (inEmph &amp;&amp; node.type === <span class="hljs-string">'Text'</span>) {
+      node.literal = node.literal.toUpperCase();
+  }
+}</pre><p>Exercises for the reader:  write a transform to</p>
+<ol>
+<li>De-linkify a document, transforming links to regular text.</li>
+<li>Remove all raw HTML (<code>Html</code> and <code>HtmlBlock</code> nodes).</li>
+<li>Run fenced code blocks marked with a language name through
+a syntax highlighting library, replacing them with an <code>HtmlBlock</code>
+containing the highlighted code.</li>
+<li>Print warnings to the console for images without image
+descriptions or titles.</li>
+</ol>
+<h2>A note on security</h2>
+<p>The library does not attempt to sanitize link attributes or
+raw HTML.  If you use this library in applications that accept
+untrusted user input, you should either enable the <code>safe</code> option
+(see above) or run the output through an HTML sanitizer to protect against
+<a href="http://en.wikipedia.org/wiki/Cross-site_scripting">XSS attacks</a>.</p>
+<h2>Performance</h2>
+<p>Performance is excellent, roughly on par with <code>marked</code>.  On a benchmark
+converting an 11 MB Markdown file built by concatenating the Markdown
+sources of all localizations of the first edition of
+<a href="https://github.com/progit/progit/tree/master/en"><em>Pro Git</em></a> by Scott
+Chacon, the command-line tool, <code>commonmark</code> is just a bit slower than
+the C program <code>discount</code>, roughly ten times faster than PHP Markdown,
+a hundred times faster than Python Markdown, and more than
+a thousand times faster than <code>Markdown.pl</code>.</p>
+<p>Here are some focused benchmarks of four JavaScript libraries
+(using versions available on 24 Jan 2015). They test performance
+on different kinds of Markdown texts.  (Most of these samples
+are taken from the
+<a href="https://github.com/markdown-it/markdown-it">markdown-it</a>
+repository.)  Results show a ratio of ops/second (higher is better)
+against showdown (which is usually the slowest implementation).
+Versions:  commonmark.js 0.21.0, markdown-it 4.3.0,
+showdown 1.2.0, marked 0.3.3, with node 0.10.25.</p>
+<table>
+<thead>
+<tr>
+<th>Sample</th>
+<th>showdown</th>
+<th>commonmark</th>
+<th>marked</th>
+<th>markdown-it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="bench/samples/block-bq-flat.md">block-bq-flat.md</a></td>
+<td>1</td>
+<td>4.2</td>
+<td>4.9</td>
+<td>4.9</td>
+</tr>
+<tr>
+<td><a href="bench/samples/block-bq-nested.md">block-bq-nested.md</a></td>
+<td>1</td>
+<td>10.0</td>
+<td>7.6</td>
+<td>11.1</td>
+</tr>
+<tr>
+<td><a href="bench/samples/block-code.md">block-code.md</a></td>
+<td>1</td>
+<td>3.8</td>
+<td>10.0</td>
+<td>14.5</td>
+</tr>
+<tr>
+<td><a href="bench/samples/block-fences.md">block-fences.md</a></td>
+<td>1</td>
+<td>6.0</td>
+<td>16.5</td>
+<td>14.3</td>
+</tr>
+<tr>
+<td><a href="bench/samples/block-heading.md">block-heading.md</a></td>
+<td>1</td>
+<td>3.9</td>
+<td>4.6</td>
+<td>5.5</td>
+</tr>
+<tr>
+<td><a href="bench/samples/block-hr.md">block-hr.md</a></td>
+<td>1</td>
+<td>2.6</td>
+<td>3.0</td>
+<td>3.8</td>
+</tr>
+<tr>
+<td><a href="bench/samples/block-html.md">block-html.md</a></td>
+<td>1</td>
+<td>1.7</td>
+<td>0.8</td>
+<td>3.9</td>
+</tr>
+<tr>
+<td><a href="bench/samples/block-lheading.md">block-lheading.md</a></td>
+<td>1</td>
+<td>3.6</td>
+<td>4.6</td>
+<td>3.1</td>
+</tr>
+<tr>
+<td><a href="bench/samples/block-list-flat.md">block-list-flat.md</a></td>
+<td>1</td>
+<td>4.3</td>
+<td>4.6</td>
+<td>6.5</td>
+</tr>
+<tr>
+<td><a href="bench/samples/block-list-nested.md">block-list-nested.md</a></td>
+<td>1</td>
+<td>7.1</td>
+<td>6.1</td>
+<td>13.2</td>
+</tr>
+<tr>
+<td><a href="bench/samples/block-ref-flat.md">block-ref-flat.md</a></td>
+<td>1</td>
+<td>0.6</td>
+<td>0.4</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td><a href="bench/samples/block-ref-nested.md">block-ref-nested.md</a></td>
+<td>1</td>
+<td>0.5</td>
+<td>0.5</td>
+<td>0.7</td>
+</tr>
+<tr>
+<td><a href="bench/samples/inline-autolink.md">inline-autolink.md</a></td>
+<td>1</td>
+<td>2.0</td>
+<td>3.4</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td><a href="bench/samples/inline-backticks.md">inline-backticks.md</a></td>
+<td>1</td>
+<td>5.6</td>
+<td>4.6</td>
+<td>7.9</td>
+</tr>
+<tr>
+<td><a href="bench/samples/inline-em-flat.md">inline-em-flat.md</a></td>
+<td>1</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td><a href="bench/samples/inline-em-nested.md">inline-em-nested.md</a></td>
+<td>1</td>
+<td>1.2</td>
+<td>1.2</td>
+<td>1.4</td>
+</tr>
+<tr>
+<td><a href="bench/samples/inline-em-worst.md">inline-em-worst.md</a></td>
+<td>1</td>
+<td>1.5</td>
+<td>1.3</td>
+<td>0.9</td>
+</tr>
+<tr>
+<td><a href="bench/samples/inline-entity.md">inline-entity.md</a></td>
+<td>1</td>
+<td>1.0</td>
+<td>3.7</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td><a href="bench/samples/inline-escape.md">inline-escape.md</a></td>
+<td>1</td>
+<td>2.0</td>
+<td>1.3</td>
+<td>4.3</td>
+</tr>
+<tr>
+<td><a href="bench/samples/inline-html.md">inline-html.md</a></td>
+<td>1</td>
+<td>2.0</td>
+<td>3.7</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td><a href="bench/samples/inline-links-flat.md">inline-links-flat.md</a></td>
+<td>1</td>
+<td>2.4</td>
+<td>2.5</td>
+<td>2.4</td>
+</tr>
+<tr>
+<td><a href="bench/samples/inline-links-nested.md">inline-links-nested.md</a></td>
+<td>1</td>
+<td>1.8</td>
+<td>0.5</td>
+<td>0.3</td>
+</tr>
+<tr>
+<td><a href="bench/samples/inline-newlines.md">inline-newlines.md</a></td>
+<td>1</td>
+<td>1.8</td>
+<td>1.8</td>
+<td>2.4</td>
+</tr>
+<tr>
+<td><a href="bench/samples/lorem1.md">lorem1.md</a></td>
+<td>1</td>
+<td>6.3</td>
+<td>3.4</td>
+<td>3.6</td>
+</tr>
+<tr>
+<td><a href="bench/samples/rawtabs.md">rawtabs.md</a></td>
+<td>1</td>
+<td>4.3</td>
+<td>4.2</td>
+<td>4.9</td>
+</tr>
+<tr>
+<td><a href="bench/samples/README.md">README.md</a></td>
+<td>1</td>
+<td>3.6</td>
+<td>3.3</td>
+<td>4.1</td>
+</tr>
+</tbody>
+</table>
+<p>To generate this table,</p>
+<pre><span class="hljs-symbol">npm</span> install showdown <span class="hljs-keyword">marked </span><span class="hljs-keyword">markdown-it </span><span class="hljs-keyword">benchmark
+</span><span class="hljs-symbol">make</span> <span class="hljs-keyword">bench-detailed</span></pre><h2>Authors</h2>
+<p>John MacFarlane wrote the first version of the JavaScript
+implementation.  The block parsing algorithm was worked out together
+with David Greenspan.  Kārlis Gaņģis helped work out a better parsing
+algorithm for links and emphasis, eliminating several worst-case
+performance issues.  Vitaly Puzrin has offered much good advice
+about optimization and other issues.</p>
+</div></article></div><footer><div style="box-sizing:border-box;max-width:768px;margin-left:auto;margin-right:auto;margin-bottom:32px;padding-top:8px;padding-bottom:8px;padding-left:32px;padding-right:32px;"><div style="margin-left:-16px;margin-right:-16px;"><a href="https://github.com/chrisui/commonmark.js" class="Link" style="box-sizing:border-box;color:inherit;display:inline-block;font-size:14px;line-height:16px;padding-left:16px;padding-right:16px;padding-top:16px;padding-bottom:16px;font-weight:600;text-decoration:none;">GitHub</a><a href="https://github.com/chrisui" class="Link" style="box-sizing:border-box;color:inherit;display:inline-block;font-size:14px;line-height:16px;padding-left:16px;padding-right:16px;padding-top:16px;padding-bottom:16px;font-weight:600;text-decoration:none;">chrisui</a></div><div></div></div></footer></div><div style="font-family:-apple-system, sans-serif;font-size:12px;font-weight:600;text-align:right;padding:24px;color:#333;background-color:#eee;"><a href="http://compositor.io" style="color:inherit;text-decoration:none;">Built with Compositor.io</a></div></body></html>
